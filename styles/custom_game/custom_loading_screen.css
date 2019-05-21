@@ -1,0 +1,100 @@
+.AddonLoadingRoot
+{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+}
+
+#TitlePanel
+{
+	horizontal-align: left;
+	vertical-align: bottom;
+	margin-bottom: 150px;
+	margin-left: 350px;
+	flow-children: right;
+}
+
+#AddonTitle
+{
+	margin-bottom: -15px;
+	margin-left: -200px;
+	vertical-align: center;
+	text-transform: uppercase;
+	font-size: 150px;
+	color: #cff92fff;
+	text-shadow: 10px 5px 3px #100005;
+	text-decoration: none;
+}
+
+#creator
+{
+	horizontal-align: left;
+	vertical-align: bottom;
+	margin-bottom: 150px;
+	margin-left: 350px;
+	flow-children: right;
+}
+
+#name
+{
+	margin-bottom: 800px;
+	margin-left: -330px;
+	vertical-align: center;
+	text-transform: uppercase;
+	font-size: 50px;
+	color: red;
+	text-shadow: 50px 5px 3px #105005;
+	text-decoration: none;
+}
+
+.avatar
+{
+    margin-bottom: 800px;
+    margin-left: 0px;
+    width: 60px;
+    height: 60px;
+    background-color: black;
+    vertical-align: middle;
+    horizontal-align: center;
+    box-shadow: 50px 50px 50px #100005;
+}
+
+#VKmain 
+{
+    flow-children: down;
+    horizontal-align: left;
+    vertical-align: top;
+    position: 438px 0px 0px;
+}
+
+#VKmain Label 
+{
+    color: #cccc;
+    font-size: 20px;
+    horizontal-align: center;
+    text-shadow: 10px 5px 2px #100005;
+}
+
+#VK 
+{
+    width: 60px;
+    height: 60px;
+    background-color: black;
+    vertical-align: middle;
+    horizontal-align: center;   
+}
+
+.Link 
+{
+    vertical-align: middle;
+    horizontal-align: center;
+}
+
+
+
+.ProBg
+{
+	background-repeat: repeat;
+	background-position: 50% 50%;
+	background-size: 100% 100%;
+}
