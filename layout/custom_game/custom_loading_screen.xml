@@ -11,12 +11,12 @@
 		</Panel>
 		<Panel id="creator">
 			<Label id="name" text="Creator:ANTFB" style="" />
-			  <DOTAAvatarImage class="avatar" steamid="76561198363232884" style="" />
+			  <DOTAAvatarImage class="avatar" steamid="76561198363232884" style="" /> 
 		</Panel>
 		<Panel id="VKmain">
           <Label text="Присойденяйтесь к нашему сообществу!"/>
-            <Button id="VK" onactivate="DOTADisplayURL('ВАША ССЫЛКА');">
-              <Image class="Link" src="file://{images}/custom_game/loading_screen/vk.png" />
+            <Button id="VK" onactivate="DOTADisplayURL('ВАША ССЫЛКА');"> /*Кнопка*/
+              <Image class="Link" src="file://{images}/custom_game/loading_screen/vk.png" /> /*Фото*/
         </Button>       
      </Panel>
    </Panel>
