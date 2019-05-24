@@ -1,0 +1,201 @@
+// Dota Heroes File
+"DOTAAbilities"
+{
+	"Version"		"1"
+
+	//=================================================================================================================
+	// Templar Assassin: Refraction Holdout
+	//=================================================================================================================
+	"templar_assassin_refraction_holdout"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"17.0 17.0 17.0 17.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage_absorb"				"200 300 400 500"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_damage"				"20 40 60 80"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"17.0 17.0 17.0 17.0"
+			}
+		}
+	}
+}
+
+    "Hit"
+    {
+	  "BaseClass"             		"ability_datadriven"
+	  "AbilityTextureName"			"hammer"
+	  "MaxLevel" 						"3"
+
+	  "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	  "AbilityUnitTargetTeam"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	  "AbilityUnitTargetType"		"DOTA_UNIT_TARGET_HERO"
+	  "AbilityUnitDamageType"		"DAMAGE_TYPE_PHYSICAL"
+
+	  "AbilityCooldown"				"15.0 12.0 9.0"
+	  "AbilityDamage" "50.213 80.212 120.2000"
+	  "AbilityCastPoint" "0.23 0.10 0.0"
+	  "AbilityManaCost" "0 0 0"
+	  "AbilitySpecial"
+	{  
+	  "01"
+	  {
+	  	"var_type" "FIELD_INTEGER"
+	  	"damage" "10 20 50"
+	  }
+	  "02"
+	  {
+	  	"var_type" "FIELD_INTEGER"
+	  	"armor" "-3 -5 -12"
+	  }
+	  "03"
+	  {
+	  	"var_type" "FIELD_INTEGER"
+	  	"duration" "2.1 3.1 5.2"
+	  }
+	}  
+	
+
+	   "Stun"
+	  {
+	  	"Duration"   "1.3"
+	  	"Target" 	 "TARGET"
+	  }
+	  
+		  "OnSpellStart"
+		  {
+		  "Stun"
+	        {
+	  	       "Duration"   "1.3"
+	  	       "Target" 	 "TARGET"
+	  	    }
+	  	  } 
+		  	"ApplyModifier"
+		  	{
+		  		"ModifierName"	"DebuffArmor"
+		  		"Target" 		"TARGET"
+		  	}
+		  }
+		  
+		  "Modifiers"
+		  {
+		  	"DebuffArmor"
+		  	{
+		  	"Duration" "%duration"
+		  		"IsDebuff"			"1"
+		        "Properties"
+		        {
+		  		   "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"        "%armor"
+		        }
+		  		
+		  	}
+		  }
+		}
+	}
+}
+
+"walrus_kick"
+{
+	"BaseClass"             		"ability_datadriven"
+	"AbilityTextureName"			"Warlus_Kick"
+	"MaxLevel" 						"3"
+	
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+
+	"AbilityManaCost" "0"
+	"AbilityDamage" "50 100 150"
+	"AbilityCooldown" "30 20 10"
+	"AbilityCastPoint" "1 0.50 0.30"
+	"AbilitySpecial"
+{
+	"01"
+	{
+		"var_type" "FIELD_INTEGER"
+		"damage" "50 100 200"
+	}
+	"02"
+	{
+		"var_type" "FIELD_INTEGER"
+		"duration" "1"
+	}
+	"03"
+	{
+		"var_type" "FIELD_INTEGER"
+		"height" "760"
+	}
+	"04"
+	{
+		"var_type" "FIELD_INTEGER"
+		"distance" "300"
+	}
+}	
+      
+	"OnSpellStart"
+	{	"Damage"
+	    {
+	    	"Target" "TARGET"
+	    	"Type" "DAMAGE_TYPE_PHYSICAL"
+	    	"Damage" "%damage"
+	    }
+
+
+        "Knockback"
+        {
+        	"Target"            "TARGET"
+	        "Center" 	        "CASTER"
+	        "Distance"	        "%distance"
+	        "Duration"	        "%duration"
+	        "Height"	        "%height"
+	        "IsFixedDistance"	"1"
+	        "ShouldStun"        "1"	
+        }
+    }
+    "ApplyModifier"
+    {
+    	"ModifierName" "modifier_kickyou"
+    	"Target" "TARGET"
+    }
+    "Modifiers"
+    {
+    	"modifier_kickyou"
+    	{
+    		"Duration" "%duration"
+    		"States"
+            {
+    		"MODIFIER_STATE_INVULNERABLE" "MODIFIER_STATE_VALUE_ENABLED"
+    		"MODIFIER_STATE_NO_HEALTH_BAR" "MODIFIER_STATE_VALUE_ENABLED"
+    		"MODIFIER_STATE_UNSELECTABLE" "MODIFIER_STATE_VALUE_ENABLED"
+    	    }
+    	}
+    }
+}    
