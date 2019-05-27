@@ -1,0 +1,14 @@
+"lang"
+{
+	"Language" "Russian"
+	{
+		"addon_name_game" "RPG Fight"
+
+
+        "DOTA_Tooltip_ability_antimage_keck"	"Швырнуть"
+        "DOTA_Tooltip_ability_antimage_keck"	"Швыряет вашего врага куда подалле от врага"
+
+
+
+	}
+}

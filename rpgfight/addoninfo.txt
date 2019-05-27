@@ -1,0 +1,13 @@
+"AddonInfo"
+{
+	maps "dota"
+    "IsPlayeble" "1"
+    "HeroGuidesSupported" "0"
+    "PenaltiesEnable" "1"
+    "dota"
+    {
+    	"MaxPlayers" "6"
+    }
+}
+
+
